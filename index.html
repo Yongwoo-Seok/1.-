@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+		
+		<!-- Webpage Title -->
+    <title>원페이지 쇼핑몰</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		
+		<!-- JS -->		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <style>
+
+    .picture_box { 
+    border : 2px solid; 
+    padding : 10px; 
+    }
+    .main_picture {
+    margin : 20px 80px 20px 80px; 
+    text-align : center;
+    }
+
+    .bold_name {
+      margin : 20px 20px auto 20px;
+    }
+
+    .product_detail {
+     margin : 10px 20px 10px 20px; 
+    }
+
+    .order_detail {
+     margin : 10px 20px 10px 20px; 
+    }
+
+    .order_button {
+    margin : 20px auto 20px auto;
+    text-align : center;
+    width : 200px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="main_picture picture_box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxzhL9bL4uOfDb4KjU2iFLvCAJI6JwYGthHfcT2yDUR29Gbc8AKg" alt ="상품사진"width = "400" height = "400"/>
+    </div>
+    
+    <p class="bold_name">
+      <font size=6><b>상품제목</b></font><font size =3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;가격 : 1,000,000원 / 개</font>
+    </p>
+
+    <div class = "product_detail">
+      이 상품으로 말할 것 같으면 용왕이 찾지 못한 토끼의 간을 찾아 빨간망토의 늑대와 아기 돼지 삼형제의 숨결이 고루 녹아 있는 먹으면 120세까지 살 수 있다는 오구의 승리의 포~즈! 오구의 승리의 포즈를 감상하시겠습니다!
+    </div>
+
+    <div class="bold_name">
+      <font size = 6><b>주문하기</b></font>
+    </div>
+
+    <form class="form-inline">
+      <div class="form-group mb-2 order_detail">
+        <input type="text" readonly class="form-control-plaintext" id="name" value="주문자 성함: ">
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" id="order_name">
+      </div>
+    </form>
+
+    <form class="form-inline">
+      <div class="form-group mb-2 order_detail">
+        <input type="text" readonly class="form-control-plaintext" id="number" value="수량: ">
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <select id="selbox" name="수량" style = "width :205px; height : 35px; border-radius : 5px;">
+          <option value=""></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="direct">직접입력</option>
+        </select>
+      </div>
+    </form>
+
+    <form class="form-inline">
+      <div class="form-group mb-2 order_detail">
+        <input type="text" readonly class="form-control-plaintext" id="address" value="주소: ">
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" id="order_address">
+      </div>
+    </form>
+
+    <form class="form-inline">
+      <div class="form-group mb-2 order_detail">
+        <input type="text" readonly class="form-control-plaintext" id="phone" value="전화번호: ">
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" id="order_phone">
+      </div>
+    </form>
+    <div class="order_button">
+      <button type="button" class="btn btn-primary order_button">주문하기</button>
+    </div>
+
+  </body>
+</html>

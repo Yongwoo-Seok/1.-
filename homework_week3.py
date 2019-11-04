@@ -27,18 +27,20 @@ soup = BeautifulSoup(data.text, 'html.parser')
 #body-content > div.newest-list > div > table > tbody > tr:nth-child(1) > td.number
 
 # 음악 차트 크롤링
+
 musics = soup.select('#body-content > div.newest-list > div > table > tbody > tr')
 for music in musics:
     name = music.select_one('td.info > a.title.ellipsis')
-    rank = music.select_one('td.number')
+    rank_raw= music.select_one('td.number')
+    rank = [int(i) for i in rank_raw.text.split() if i.isdigit()]
     artist = music.select_one('td.info > a.artist.ellipsis')
     album = music.select_one('td.info > a.albumtitle.ellipsis')
     #album_image = music.select_one('td:nth-child(3) > a > span')
     data = {
-        'rank': rank.text.strip('\n'),
-        'name': name.text,
+        'rank': rank[0],
+        'name': name.text.strip(),
         'artist': artist.text,
         'album': album.text
     }
     #print(data) #제대로 찍히나 확인
-    db.music_rank.insert_one(data)
+    db.music_rank2.insert_one(data)

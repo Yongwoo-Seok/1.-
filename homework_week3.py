@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from pymongo import MongoClient
 
 client = MongoClient('localhost', 27017)
-db = client.Sparta_homework
+db = client.Sprata_homework
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
@@ -27,7 +27,7 @@ soup = BeautifulSoup(data.text, 'html.parser')
 #body-content > div.newest-list > div > table > tbody > tr:nth-child(1) > td.number
 
 # 음악 차트 크롤링
-musics = soup.select('body-content > div.newest-list > div > table > tbody > tr')
+musics = soup.select('#body-content > div.newest-list > div > table > tbody > tr')
 for music in musics:
     name = music.select_one('td.info > a.title.ellipsis')
     rank = music.select_one('td.number')
@@ -35,9 +35,10 @@ for music in musics:
     album = music.select_one('td.info > a.albumtitle.ellipsis')
     #album_image = music.select_one('td:nth-child(3) > a > span')
     data = {
-        'rank': rank.text,
+        'rank': rank.text.strip('\n'),
         'name': name.text,
         'artist': artist.text,
         'album': album.text
     }
+    #print(data) #제대로 찍히나 확인
     db.music_rank.insert_one(data)

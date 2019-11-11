@@ -31,7 +31,8 @@
       // 주문저장
       $.ajax({
         type: "POST", 
-        url: "http://spartacodingclub.shop/order", 
+        url : "/shop",
+        //url: "http://spartacodingclub.shop/order", 
         data: { name_give: name, count_give: count, address_give: address , phone_give : phone , item_give : item}, 
         success: function(response){ 
           if (response['result'] == 'success') {
@@ -62,7 +63,8 @@
     function listing() {
     $.ajax({
         type: "GET",
-        url: "http://spartacodingclub.shop/order?item_give=승리의 포즈 오구",
+        url : "/shop?item_give=승리의 포즈 오구",
+        //url: "http://spartacodingclub.shop/order?item_give=승리의 포즈 오구",
         data: {},
         success: function(response){
           if (response['result'] == 'success'){
